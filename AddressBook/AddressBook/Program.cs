@@ -3,6 +3,22 @@
 Console.WriteLine("Welcome to Address Book problem");
 
 AddressBook address = new AddressBook();
-address.AddNewContact();
 Console.WriteLine();
-address.Display();
+string command = "";
+
+while (command != "exit")
+{
+    Console.Clear();
+    Console.WriteLine("Please enter a command: ");
+    command = Console.ReadLine().ToLower();
+
+    switch (command)
+    {
+        case "add":
+            address.AddPerson();
+            break;
+        case "edit":
+            address.EditContact();
+            break;
+    }
+}
