@@ -129,6 +129,16 @@ namespace AddressBookProblem
                 Console.WriteLine($"Firstname \t{contact.FirstName}\n Lastname \t {contact.LastName}\n PhoneNumber \t{contact.City}\ncity \t{contact.State}\n zip \t{contact.PhoneNumber}\n Email \t{contact.Email}\n Adress \t{contact.Address}\n ");
             }
         }
+        public void AddMultipleContact()
+        {
+            Console.WriteLine("enter number of contact you want to add");
+            int N = Convert.ToInt32(Console.ReadLine());
+            while (N > 0)
+            {
+                AddPerson();
+                N--;
+            }
+        }
     }
 }
 

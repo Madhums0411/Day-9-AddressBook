@@ -9,7 +9,7 @@ string command = "";
 while (command != "exit")
 {
     Console.Clear();
-    Console.WriteLine("Please enter a command: ");
+    Console.WriteLine("Please enter a command add,edit,remove,display,multipleperson: ");
     command = Console.ReadLine().ToLower();
 
     switch (command)
@@ -25,6 +25,9 @@ while (command != "exit")
             break;
         case "display":
             address.Display();
+            break;
+        case "multipleperson":
+            address.AddMultipleContact();
             break;
     }
 }
