@@ -20,5 +20,11 @@ while (command != "exit")
         case "edit":
             address.EditContact();
             break;
+        case "remove":
+            address.RemoveContact();
+            break;
+        case "display":
+            address.Display();
+            break;
     }
 }

@@ -16,6 +16,10 @@ namespace AddressBookProblem
         public string State { get; set; }
         public string Zip { get; set; }
         public string Email { get; set; }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
 
     }
     public class AddressBook
@@ -75,7 +79,7 @@ namespace AddressBookProblem
                             break;
                         case 3:
                             Console.WriteLine("Enter the State");
-                            contact.City = Console.ReadLine();
+                            contact.State = Console.ReadLine();
                             break;
                         case 4:
                             Console.WriteLine("Enter the zip");
@@ -94,6 +98,36 @@ namespace AddressBookProblem
                 }
             }
             Console.WriteLine("no contact with this firstname");
+        }
+        public void RemoveContact()
+        {
+
+            Console.WriteLine("enter the first name you want to remove");
+            string firstname = Console.ReadLine();
+            foreach (Contact contact in People)
+            {
+
+                if (contact.FirstName.ToLower() == firstname.ToLower())
+                {
+                    People.Remove(contact);
+                    Console.WriteLine("the firstname you have entered is deleted ");
+                    return;
+
+                }
+
+
+            }
+
+            Console.WriteLine("contact not found");
+
+
+        }
+        public void Display()
+        {
+            foreach (Contact contact in People)
+            {
+                Console.WriteLine($"Firstname \t{contact.FirstName}\n Lastname \t {contact.LastName}\n PhoneNumber \t{contact.City}\ncity \t{contact.State}\n zip \t{contact.PhoneNumber}\n Email \t{contact.Email}\n Adress \t{contact.Address}\n ");
+            }
         }
     }
 }
